@@ -1,0 +1,14 @@
+<div ng-controller="cacheMgrControllerCacheInfo as ctrl">
+    <h3 style="background-color: lightgrey">{{ctrl.headingTitle}}</h3>
+    <div>
+        <div ng-repeat="(key, value) in ctrl.allCacheInfo">
+            <h3>CacheName: {{key}}</h3>
+            <hr>
+            <div ng-repeat="v in value">
+                <b>Cache Key:</b> <span>{{v.entryKey}}</span>
+                <br>
+                <b>Cache Creation Time:</b> <span>{{v.creationTime}}</span>
+            </div>
+        </div>
+    </div>
+</div>

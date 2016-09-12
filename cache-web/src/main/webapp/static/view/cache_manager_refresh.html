@@ -1,0 +1,22 @@
+<div class="section" ng-controller="cacheMgrControllerCacheRefresh as ctrl">
+    <h3 style="background-color: lightgrey">{{ctrl.headingTitle}}</h3>
+    <hr>
+    <div>
+        <table border="1">
+            <thead>
+            <tr>
+                <th>&nbsp; Cache Name &nbsp;</th>
+                <th>&nbsp; Loading Status &nbsp;</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="status in ctrl.allCacheLoadingStatusInfo">
+                <td>{{status.cacheEntryKey}}</td>
+                <td ng-class="{{status.cacheEntryLoadingStatus}}"><b>{{status.cacheEntryLoadingStatus}}</b></td>
+                <td><button ng-disabled="!status.reloadable" ng-click="ctrl.reloadCache(status.cacheEntryKey);"> RE-LOAD </button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
